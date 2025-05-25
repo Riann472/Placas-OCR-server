@@ -26,14 +26,11 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         .sharpen()
         .toBuffer();
 
-    await sharp(buffer).toFile('./processamento/atual.png', (err, info) => {
+    sharp(buffer).toFile('./processamento/atual.png', (err, info) => {
         if (err) {
             console.error('Erro ao salvar a imagem:', err);
             return res.status(500).json({ error: 'Erro ao salvar a imagem' });
         }
-
-        console.log('Imagem salva com sucesso:', info);
-
     })
 
     const worker = await OCR.createWorker('placa')
@@ -55,7 +52,6 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         console.log("Placa identificada:", placa);
         return res.json(placa);
     } else {
-        console.log(textoBruto)
         console.log("Nenhuma placa encontrada.");
         return res.json("Placa não reconhecida");
     }
