@@ -3,6 +3,17 @@
 Este é o backend da aplicação de leitura de placas de carros e motos, feito em **Node.js**. Ele recebe uma imagem via API, usa **Tesseract.js** para realizar OCR e retorna o texto detectado (possivelmente uma placa veicular).
 
 ---
+## ✅ Pré-requisitos
+
+Antes de começar, certifique-se de que você tem o **Node.js (versão 22 ou superior)** instalado em sua máquina.  
+Você pode baixar o Node.js em: [https://nodejs.org](https://nodejs.org)
+
+Para verificar se o Node.js está instalado, execute no terminal:
+
+```bash
+node -v
+npm -v
+```
 
 ## 🔧 Tecnologias Utilizadas
 
