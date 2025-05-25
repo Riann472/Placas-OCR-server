@@ -30,8 +30,15 @@ cd seu-repo-backend
 npm install
 npm install -g nodemon
 ```
+### 3. Configure as variaveis de ambiente .env
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
-### 3. Inicie o servidor
+```env
+PORT=3001
+```
+(Outras portas podem ser usadas tambem)
+
+### 4. Inicie o servidor
 
 ```bash
 npm run start
