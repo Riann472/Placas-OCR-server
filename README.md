@@ -20,8 +20,8 @@ Este é o backend da aplicação de leitura de placas de carros e motos, feito e
 ### 1. Clone este repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo-backend.git
-cd seu-repo-backend
+git clone https://github.com/Riann472/Placas-OCR-server.git
+cd Placas-OCR-server
 ```
 
 ### 2. Instale as dependências
