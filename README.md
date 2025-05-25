@@ -28,12 +28,13 @@ cd seu-repo-backend
 
 ```bash
 npm install
+npm install -g nodemon
 ```
 
 ### 3. Inicie o servidor
 
 ```bash
-npm start
+npm run start
 ```
 
 ## 📡 Endpoint disponível
