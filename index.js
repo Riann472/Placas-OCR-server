@@ -22,7 +22,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         .resize({ width: 600 })
         .grayscale()
         .linear(1.2, -10)
-        .threshold(120)
+        .threshold(140)
         .sharpen()
         .toBuffer();
 
@@ -33,12 +33,12 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         }
     })
 
-    const worker = await OCR.createWorker('placa')
+    const worker = await OCR.createWorker('placanovo')
     await worker.setParameters({
         tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
         tessedit_pageseg_mode: '6',
         user_defined_dpi: '300'
-    });
+    }); 
 
     const result = await worker.recognize(buffer)
     await worker.terminate()
@@ -53,6 +53,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         return res.json(placa);
     } else {
         console.log("Nenhuma placa encontrada.");
+        console.log("Texto bruto: " + result.data.text)
         return res.json("Placa não reconhecida");
     }
 })
